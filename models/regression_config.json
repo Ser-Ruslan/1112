@@ -1,0 +1,81 @@
+{
+  "feature_columns": [
+    "age",
+    "trestbps",
+    "chol",
+    "oldpeak",
+    "sex_encoded",
+    "cp_encoded",
+    "fbs_encoded",
+    "restecg_encoded",
+    "exang_encoded",
+    "slope_encoded",
+    "thal_encoded"
+  ],
+  "numeric_features": [
+    "age",
+    "trestbps",
+    "chol",
+    "oldpeak"
+  ],
+  "categorical_features": [
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "thal"
+  ],
+  "target_variable": "thalach",
+  "model_type": "LinearRegression",
+  "train_r2": 0.38506520637336306,
+  "test_r2": 0.18838381182336705,
+  "train_rmse": 18.299959680057277,
+  "test_rmse": 16.71025471130189,
+  "train_mae": 14.367158408501647,
+  "test_mae": 13.872077644750226,
+  "intercept": 149.9375,
+  "coefficients": {
+    "age": -8.995946558836739,
+    "trestbps": 2.0488807146670442,
+    "chol": 1.6092216175444063,
+    "oldpeak": -1.531997928497186,
+    "sex_encoded": -0.41617872642229925,
+    "cp_encoded": -0.7165617050858819,
+    "fbs_encoded": 0.6052113642553588,
+    "restecg_encoded": -0.13849018169110833,
+    "exang_encoded": -6.473192793514545,
+    "slope_encoded": 5.309019957966758,
+    "thal_encoded": 0.16807828093101324
+  },
+  "most_important_feature": "age",
+  "train_size": 240,
+  "test_size": 61,
+  "feature_means": [
+    54.62083333333333,
+    131.62083333333334,
+    245.84166666666667,
+    0.9854166666666667,
+    0.675,
+    1.8791666666666667,
+    0.15,
+    1.4875,
+    0.30416666666666664,
+    1.4166666666666667,
+    1.3166666666666667
+  ],
+  "feature_stds": [
+    8.92013075234264,
+    17.460967879976057,
+    50.471856156564016,
+    1.1159430957963563,
+    0.4683748498798798,
+    1.0236695294652252,
+    0.3570714214271425,
+    0.5242554243877692,
+    0.4600535898735663,
+    0.5997684738482193,
+    0.5698440332426253
+  ]
+}
