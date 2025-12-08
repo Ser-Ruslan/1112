@@ -6,15 +6,16 @@
 
 import joblib
 import numpy as np
+import pandas as pd
 import json
 from pathlib import Path
-from typing import Dict, Tuple, List
+from typing import Dict, Tuple, List, Optional
 
 
 class RegressionModel:
     """Обёртка для модели линейной регрессии"""
     
-    def __init__(self, model_path: str = None, scaler_path: str = None, config_path: str = None):
+    def __init__(self, model_path: Optional[str] = None, scaler_path: Optional[str] = None, config_path: Optional[str] = None):
         """
         Инициализировать модель
         
@@ -80,8 +81,9 @@ class RegressionModel:
             sex, cp, fbs, restecg, exang, slope, thal
         )
         
-        # Масштабировать признаки
-        features_scaled = self.scaler.transform([features])
+        # Масштабировать признаки - создаём DataFrame с правильными названиями колонок
+        features_df = pd.DataFrame([features], columns=self.feature_columns)
+        features_scaled = self.scaler.transform(features_df)
         
         # Предсказать
         prediction = self.model.predict(features_scaled)[0]
